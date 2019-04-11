@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+</head>
+<body>
+<table id="myTable" class="display">
+    <thead>
+    <tr>
+        <th>Subscriber ID</th>
+        <th>Install Location</th>
+        <th>Subscriber Name</th>
+        <th>some data</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>yyooo</td>
+        <td>mike</td>
+        <td>omer</td>
+        <td>carter</td>
+    </tr>
+    <tr>
+        <td>hyyyy</td>
+        <td>grg</td>
+        <td>gdg</td>
+        <td>ferge</td>
+    </tr>
+    </tbody>
+</table>
+<form action="">
+    <label for="me">label</label>
+    <select id="me" type="text" name="hiy">
+        <option value="1">one</option>
+        <option value="2">two</option>
+    </select>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $('#me').select2({
+            placeholder: "select a value",
+            ajax: {
+                url: "urlhere",
+                type: "POST",
+                dataType: "JSON",
+                delay: 250,
+                data: function (paramas) {
+                    return {
+                        value: paramas.whatever //the value received from select
+                    };
+                },
+
+
+            }
+        })
+    })
+
+</script>
+
+<!--<script>-->
+    <!--function at(hour, minute) {-->
+        <!--debugger;-->
+        <!--function makeMTime(hour, minute) {-->
+            <!--let timeArr = [];-->
+            <!--if (hour < 10) {-->
+                <!--timeArr[0] = "0";-->
+                <!--timeArr[1] = hour.toString();-->
+                <!--timeArr[2] = ":";-->
+                <!--if (minute < 10) {-->
+                    <!--timeArr[3] = "0";-->
+                    <!--timeArr[4] = hour.toString();-->
+                    <!--return timeArr.join("")-->
+                <!--} else {-->
+                    <!--timeArr[3] = minute.toString().split("").shift();-->
+                    <!--timeArr[4] = hour.toString().split("").pop();-->
+                    <!--return timeArr.join("");-->
+                <!--}-->
+            <!--} else {-->
+                <!--timeArr[0] = hour.toString().split("").shift();-->
+                <!--timeArr[1] = hour.toString().split("").pop();-->
+                <!--timeArr[2] = ":";-->
+                <!--if (minute < 10) {-->
+                    <!--timeArr[3] = 0;-->
+                    <!--timeArr[4] = hour.toString();-->
+                    <!--return timeArr.join("")-->
+                <!--} else {-->
+                    <!--timeArr[3] = minute.toString().split("").shift();-->
+                    <!--timeArr[4] = hour.toString().split("").pop();-->
+                    <!--return timeArr.join("")-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+        <!--debugger;-->
+        <!--var mTime = makeMTime(hour, minute);-->
+        <!--console.log(mTime);-->
+
+    <!--}-->
+
+    <!--let flag = at(5, 35);-->
+    <!--console.log(flag);-->
+<!--</script>-->
+
+
+</body>
+</html>
